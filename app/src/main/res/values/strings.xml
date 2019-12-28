@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Kampung Anggrek</string>
+
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">LANJUT</string>
+    <string name="skip">LEWATI</string>
+    <string name="start">MULAI</string>
+
+    <string name="slide_1_title">BELI ONLINE</string>
+    <string name="slide_1_desc">Gak perlu repot, tinggal buka aplikasi dan pilih bunganya</string>
+
+    <string name="slide_2_title">FLEKSIBEL</string>
+    <string name="slide_2_desc">Bisa beli dimana saja dan kapan saja</string>
+
+    <string name="slide_3_title">PEMBAYARAN</string>
+    <string name="slide_3_desc">Bisa ditempat dan pilihan pembayaran yang mudah</string>
+</resources>
