@@ -5,6 +5,10 @@
     <color name="colorAccent">#D81B60</color>
 
     <color name="ungu">#9F10AC</color>
+    <color name="unguT">#649F10AC</color>
+    <color name="ungumuda">#ec38bc</color>
+    <color name="ungumudaT">#64ec38bc</color>
+    <color name="colorWhite">#ffffff</color>
 
     <!-- dots inactive colors -->
     <color name="dot_dark_screen1">#FFFFF0</color>
