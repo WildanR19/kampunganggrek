@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText email, password;
+    private EditText email, password, confirmPassword;
     private Button btn_regis;
     private FirebaseAuth auth;
 
@@ -28,12 +28,17 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         initView();
+        registerUser();
+
+        getSupportActionBar().setTitle("Register");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     private void initView(){
         email = findViewById(R.id.input_email);
         password = findViewById(R.id.input_password);
         btn_regis = findViewById(R.id.btn_regis);
+        confirmPassword = findViewById(R.id.confirm_password);
         auth = FirebaseAuth.getInstance();
     }
 
@@ -44,25 +49,23 @@ public class RegisterActivity extends AppCompatActivity {
                 //menampung imputan user
                 String emailUser = email.getText().toString().trim();
                 String passwordUser = password.getText().toString().trim();
+                String passwordConfirm = confirmPassword.getText().toString().trim();
 
                 //validasi email dan password
                 // jika email kosong
                 if (emailUser.isEmpty()){
                     email.setError("Email tidak boleh kosong");
-                }
-                // jika email not valid
-                else if (!Patterns.EMAIL_ADDRESS.matcher(emailUser).matches()){
+                } else if (!Patterns.EMAIL_ADDRESS.matcher(emailUser).matches()){
                     email.setError("Email tidak valid");
-                }
-                // jika password kosong
-                else if (passwordUser.isEmpty()){
+                } else if (passwordUser.isEmpty()){
                     password.setError("Password tidak boleh kosong");
-                }
-                //jika password kurang dari 6 karakter
-                else if (passwordUser.length() < 6){
+                } else if (passwordUser.length() < 6){
                     password.setError("Password minimal terdiri dari 6 karakter");
-                }
-                else {
+                } else if(passwordConfirm.isEmpty()){
+                    confirmPassword.setError("Password tidak boleh kosong");
+                } else if (!passwordConfirm.equals(passwordUser)){
+                    Toast.makeText(RegisterActivity.this, "Password Tidak Sama", Toast.LENGTH_SHORT).show();
+                } else {
                     //create user dengan firebase auth
                     auth.createUserWithEmailAndPassword(emailUser,passwordUser)
                             .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
@@ -70,8 +73,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     //jika gagal register do something
                                     if (!task.isSuccessful()){
-                                        Toast.makeText(RegisterActivity.this,
-                                                "Register gagal karena "+ task.getException().getMessage(),
+                                        Toast.makeText(RegisterActivity.this, task.getException().getMessage(),
                                                 Toast.LENGTH_LONG).show();
                                     }else {
                                         //jika sukses akan menuju ke login activity

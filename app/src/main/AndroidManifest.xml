@@ -9,7 +9,15 @@
         android:roundIcon="@drawable/logoicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegisterActivity" android:theme="@style/NoBar"></activity>
+        <activity android:name=".RegisterActivity" android:theme="@style/RegisTheme"
+            android:parentActivityName="com.wildan.kampunganggrek.LoginActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wildan.kampunganggrek.LoginActivity"
+                />
+
+        </activity>
         <activity
             android:name=".LoginActivity"
             android:theme="@style/NoBar" />
