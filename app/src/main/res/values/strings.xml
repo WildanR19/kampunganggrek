@@ -14,4 +14,6 @@
 
     <string name="slide_3_title">PEMBAYARAN</string>
     <string name="slide_3_desc">Bisa ditempat dan pilihan pembayaran yang mudah</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
 </resources>
