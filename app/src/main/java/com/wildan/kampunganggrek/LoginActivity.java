@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 //Check user input is correct or not
                 if (validate()) {
-                    User currentUser = sqliteHelper.Authenticate(new User(null, null, Email, Password));
+                    User currentUser = sqliteHelper.Authenticate(new User(0, null, Email, Password));
                     //Check Authentication is successful or not
                     if (currentUser != null) {
                         Snackbar.make(buttonLogin, "Successfully Logged in!", Snackbar.LENGTH_LONG).show();

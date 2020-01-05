@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         set = (RelativeLayout) findViewById(R.id.setting);
         out = (RelativeLayout) findViewById(R.id.logout);
 
-        belanja.setOnClickListener(new View.OnClickListener() {
+        /*belanja.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, belanjja.class);
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent(MainActivity.this, notaa.class);
                 startActivity(i);
             }
-        });
+        });*/
 
         set.setOnClickListener(new View.OnClickListener() {
             @Override

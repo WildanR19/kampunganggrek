@@ -50,7 +50,7 @@ public class RegisterActivity extends AppCompatActivity {
                     if (!sqliteHelper.isEmailExists(Email)) {
 
                         //Email does not exist now add new user to database
-                        sqliteHelper.addUser(new User(null, UserName, Email, Password));
+                        sqliteHelper.addUser(new User(0, UserName, Email, Password));
                         Snackbar.make(buttonRegister, "User created successfully! Please Login ", Snackbar.LENGTH_LONG).show();
                         new Handler().postDelayed(new Runnable() {
                             @Override

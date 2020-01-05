@@ -6,38 +6,25 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 public class SqliteHelper  extends SQLiteOpenHelper {
-    //DATABASE NAME
+
     public static final String DATABASE_NAME = "login";
-
-    //DATABASE VERSION
     public static final int DATABASE_VERSION = 1;
-
-    //TABLE NAME
     public static final String TABLE_USERS = "adminlogin";
-
-    //TABLE USERS COLUMNS
-    //ID COLUMN @primaryKey
     public static final String KEY_ID = "id";
-
-    //COLUMN user name
     public static final String KEY_USER_NAME = "username";
-
-    //COLUMN email
     public static final String KEY_EMAIL = "email";
-
-    //COLUMN password
     public static final String KEY_PASSWORD = "password";
 
-    //SQL for creating users table
     public static final String SQL_TABLE_USERS = " CREATE TABLE " + TABLE_USERS
             + " ( "
-            + KEY_ID + " INTEGER PRIMARY KEY, "
+            + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + KEY_USER_NAME + " TEXT, "
             + KEY_EMAIL + " TEXT, "
             + KEY_PASSWORD + " TEXT"
             + " ) ";
-
 
     public SqliteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -59,22 +46,11 @@ public class SqliteHelper  extends SQLiteOpenHelper {
     //using this method we can add users to user table
     public void addUser(User user) {
 
-        //get writable database
         SQLiteDatabase db = this.getWritableDatabase();
-
-        //create content values to insert
         ContentValues values = new ContentValues();
-
-        //Put username in  @values
         values.put(KEY_USER_NAME, user.userName);
-
-        //Put email in  @values
         values.put(KEY_EMAIL, user.email);
-
-        //Put password in  @values
         values.put(KEY_PASSWORD, user.password);
-
-        // insert row
         long todo_id = db.insert(TABLE_USERS, null, values);
     }
 
@@ -88,7 +64,7 @@ public class SqliteHelper  extends SQLiteOpenHelper {
 
         if (cursor != null && cursor.moveToFirst()&& cursor.getCount()>0) {
             //if cursor has value then in user database there is user associated with this given email
-            User user1 = new User(cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getString(3));
+            User user1 = new User(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), cursor.getString(3));
 
             //Match both passwords check they are same or not
             if (user.password.equalsIgnoreCase(user1.password)) {
@@ -115,5 +91,26 @@ public class SqliteHelper  extends SQLiteOpenHelper {
 
         //if email does not exist return false
         return false;
+    }
+
+    public void updateData(int id, String username, String email, String password){
+        String updateData = "UPDATE "+TABLE_USERS+ " SET "+ KEY_USER_NAME + "= '"+username +"', "+KEY_EMAIL + "= '"+email +"', "+KEY_PASSWORD + "= '"+password + "' WHERE "+KEY_ID +" ="+id;
+        this.getWritableDatabase().execSQL(updateData);
+    }
+
+    public void deleteData(int id){
+        String deleteData = "DELETE FROM "+TABLE_USERS +" WHERE id="+id;
+        this.getWritableDatabase().execSQL(deleteData);
+    }
+
+    public User getData(int id){
+        User model = null;
+        String selectData = "SELECT * FROM "+TABLE_USERS + " WHERE id="+ id;
+        Cursor data = this.getWritableDatabase().rawQuery(selectData, null);
+        if(data.moveToFirst()){
+            model = new User(Integer.parseInt(data.getString(data.getColumnIndex(KEY_ID))),
+                    data.getString(data.getColumnIndex(KEY_USER_NAME)), data.getString(data.getColumnIndex(KEY_EMAIL)), data.getString(data.getColumnIndex(KEY_PASSWORD)));
+        }
+        return model;
     }
 }
