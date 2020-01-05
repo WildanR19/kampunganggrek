@@ -1,0 +1,180 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView android:id="@+id/your_information_ek1"
+            android:fontFamily="Acumin Pro SemiCondensed"
+            android:textSize="20sp"
+            android:textColor="@color/ungumuda"
+            android:layout_marginLeft="@dimen/item_margin"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Informasi Akun"
+            />
+
+        <RelativeLayout android:id="@+id/Informasi_akun"
+            android:layout_margin="20dp"
+            android:layout_below="@+id/your_information_ek1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bgset"
+            android:padding="25dp"
+            >
+
+            <TextView android:id="@+id/username"
+                android:fontFamily="Acumin Pro SemiCondensed"
+                android:textSize="16sp"
+                android:textColor="@color/colorWhite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                />
+
+            <TextView android:id="@+id/edit_username"
+                android:fontFamily="Acumin Pro SemiCondensed"
+                android:alpha="0.76078431372549"
+                android:textSize="16sp"
+                android:textColor="@color/colorWhite"
+                android:layout_below="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="username"
+                />
+
+            <ImageView android:id="@+id/path"
+                android:src="@drawable/icon_edit"
+                android:contentDescription="path"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/username"
+                android:layout_marginTop="-6dp"
+                android:layout_width="21dp"
+                android:layout_height="21dp" />
+
+            <TextView android:id="@+id/email"
+                android:fontFamily="Acumin Pro SemiCondensed"
+                android:textSize="16sp"
+                android:textColor="@color/colorWhite"
+                android:layout_below="@+id/edit_username"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                />
+
+            <TextView android:id="@+id/edit_email"
+                android:fontFamily="Acumin Pro SemiCondensed"
+                android:alpha="0.76078431372549"
+                android:textSize="16sp"
+                android:textColor="@color/colorWhite"
+                android:layout_below="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                />
+
+            <ImageView android:id="@+id/btn_alamat"
+                android:src="@drawable/icon_edit"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/email"
+                android:layout_marginTop="-6dp"
+                android:layout_width="21dp"
+                android:layout_height="21dp" />
+
+            <TextView android:id="@+id/password"
+                android:fontFamily="Acumin Pro SemiCondensed"
+                android:textSize="16sp"
+                android:textColor="@color/colorWhite"
+                android:layout_below="@+id/edit_email"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ganti Password"
+                />
+
+        </RelativeLayout>
+
+        <TextView android:id="@+id/contactt"
+            android:fontFamily="Acumin Pro SemiCondensed"
+            android:textSize="20sp"
+            android:textColor="@color/ungumuda"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="@dimen/item_margin"
+            android:layout_below="@+id/Informasi_akun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact"
+            />
+
+        <RelativeLayout android:id="@+id/contact"
+            android:layout_below="@+id/contactt"
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bgset"
+            android:padding="25dp"
+            >
+
+            <TextView android:id="@+id/call"
+                android:fontFamily="Acumin Pro SemiCondensed"
+                android:textSize="16sp"
+                android:textColor="@color/colorWhite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Call Center"
+                />
+
+            <TextView android:id="@+id/sms"
+                android:fontFamily="Acumin Pro SemiCondensed"
+                android:textSize="16sp"
+                android:textColor="@color/colorWhite"
+                android:layout_below="@+id/call"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SMS Center"
+                />
+
+            <TextView android:id="@+id/location"
+                android:fontFamily="Acumin Pro SemiCondensed"
+                android:textSize="16sp"
+                android:textColor="@color/colorWhite"
+                android:layout_below="@+id/sms"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                />
+
+            <ImageView android:id="@+id/callgb"
+                android:src="@drawable/telephone"
+                android:layout_alignParentRight="true"
+                android:layout_width="36dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="-5dp"/>
+
+            <ImageView android:id="@+id/smsgb"
+                android:src="@drawable/envelope"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/callgb"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_width="36dp"
+                android:layout_height="24dp" />
+
+            <ImageView android:id="@+id/loc"
+                android:src="@drawable/location"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/smsgb"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_width="36dp"
+                android:layout_height="24dp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</ScrollView>

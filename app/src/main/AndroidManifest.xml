@@ -9,14 +9,14 @@
         android:roundIcon="@drawable/logoicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegisterActivity" android:theme="@style/RegisTheme"
-            android:parentActivityName="com.wildan.kampunganggrek.LoginActivity">
-
+        <activity android:name=".setting"></activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:parentActivityName=".LoginActivity"
+            android:theme="@style/RegisTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.wildan.kampunganggrek.LoginActivity"
-                />
-
+                android:value="com.wildan.kampunganggrek.LoginActivity" />
         </activity>
         <activity
             android:name=".LoginActivity"
@@ -35,7 +35,11 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/NoBar" />
+            android:theme="@style/NoBar"></activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

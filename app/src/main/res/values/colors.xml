@@ -9,6 +9,7 @@
     <color name="ungumuda">#ec38bc</color>
     <color name="ungumudaT">#64ec38bc</color>
     <color name="colorWhite">#ffffff</color>
+    <color name="putihb">#F3F1F1</color>
 
     <!-- dots inactive colors -->
     <color name="dot_dark_screen1">#FFFFF0</color>

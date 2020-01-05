@@ -1,20 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ecf0f1"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/rectangle"
+        />
 
-    <TextView
-        android:id="@+id/tv_user"
+    <RelativeLayout
+        android:id="@+id/rltitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:padding="20dp">
+        <ViewFlipper
+            android:id="@+id/v_flipper"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <com.synnapps.carouselview.CarouselView
+                android:id="@+id/carouselView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:fillColor="#FFFFFFFF"
+                app:pageColor="#00000000"
+                app:radius="6dp"
+                app:slideInterval="3000"
+                app:strokeColor="#FF777777"
+                app:strokeWidth="1dp"/>
+
+        </ViewFlipper>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rltitle"
+        android:fontFamily="@font/oleo_script_swash_caps"
+        android:gravity="center"
+        android:text="Selamat Berbelanja ^_^"
+        android:textColor="@color/ungu"
+        android:textSize="24sp" />
+
+    <RelativeLayout android:id="@+id/item"
+        android:layout_below="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:background="@drawable/bgadmin"
+        android:padding="10dp"
+        android:layout_margin="30dp"
+        >
+        <RelativeLayout
+            android:id="@+id/belanja"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            >
+
+            <TextView android:id="@+id/brlanjatxt"
+                android:fontFamily="Helvetica Neue"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Belanja"
+                android:layout_below="@+id/belanjagb"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/ungu"
+                />
+
+            <ImageView android:id="@+id/belanjagb"
+                android:src="@drawable/penjualan"
+                android:contentDescription="contact_ek1"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/setting"
+            android:padding="10dp"
+            android:layout_below="@+id/belanja"
+            android:layout_marginTop="20dp">
+            <ImageView android:id="@+id/settinggb"
+                android:src="@drawable/set"
+                android:contentDescription="p"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_centerHorizontal="true"
+                android:padding="5dp"
+                />
+            <TextView android:id="@+id/settingtxt"
+                android:fontFamily="Helvetica Neue"
+                android:textSize="16sp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/settinggb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pengaturan"
+                android:textColor="@color/ungu"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/nota"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="10dp">
+
+            <ImageView android:id="@+id/notagb"
+                android:src="@drawable/nota"
+                android:contentDescription="parchment"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_centerHorizontal="true"
+                android:padding="5dp"
+                />
+            <TextView
+                android:id="@+id/notatxt"
+                android:fontFamily="Helvetica Neue"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/notagb"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nota Pembelian"
+                android:textColor="@color/ungu"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout android:id="@+id/logout"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/nota"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_alignParentRight="true"
+            >
+            <TextView android:id="@+id/logouttxt"
+                android:fontFamily="Helvetica Neue"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Log out"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/logoutgb"
+                android:textColor="@color/ungu"
+                />
+
+            <ImageView android:id="@+id/logoutgb"
+                android:src="@drawable/logout"
+                android:padding="5dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/credit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bgadmin"
+        android:padding="10dp"
+        android:layout_below="@+id/item"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wildan Rozaqi (A22.2018.02690)"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/ungu"/>
+    </RelativeLayout>
+
+</RelativeLayout>
