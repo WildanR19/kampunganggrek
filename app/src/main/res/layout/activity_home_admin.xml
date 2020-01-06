@@ -1,0 +1,188 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ecf0f1"
+    tools:context=".admin.HomeAdmin">
+
+    <RelativeLayout
+        android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <View android:id="@+id/bgHeader"
+            android:background="@drawable/rectangle"
+            android:layout_width="match_parent"
+            android:layout_height="120dp" />
+
+        <RelativeLayout android:id="@+id/lytitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/logo"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/welcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bgadmin"
+            android:padding="10dp"
+            android:layout_below="@+id/bgHeader"
+            android:layout_marginTop="-20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome Back Admin"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout android:id="@+id/item"
+            android:layout_below="@+id/welcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="3dp"
+            android:clickable="true"
+            android:background="@drawable/bgadmin"
+            android:padding="10dp"
+            android:layout_margin="30dp"
+            >
+            <RelativeLayout
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/produk"
+                android:padding="10dp">
+                <ImageView android:id="@+id/plus"
+                    android:src="@drawable/add_product"
+                    android:contentDescription="p"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_centerHorizontal="true"
+                    />
+                <TextView android:id="@+id/plustxt"
+                    android:fontFamily="Helvetica Neue"
+                    android:textSize="16sp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tambah Produk"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/listproduk"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="10dp">
+
+                <ImageView android:id="@+id/list"
+                    android:src="@drawable/list"
+                    android:contentDescription="parchment"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_centerHorizontal="true"
+                    android:padding="5dp"
+                    />
+                <TextView
+                    android:id="@+id/listtxt"
+                    android:fontFamily="Helvetica Neue"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/list"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="List Produk"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout android:id="@+id/logout"
+                android:layout_marginTop="30dp"
+                android:layout_below="@+id/produk"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_centerHorizontal="true"
+                >
+
+                <TextView android:id="@+id/logouttxt"
+                    android:fontFamily="Helvetica Neue"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Log out"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/logoutgb"
+                    />
+
+                <ImageView android:id="@+id/logoutgb"
+                    android:src="@drawable/logout"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:padding="5dp"
+                    android:layout_centerHorizontal="true"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/credit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bgadmin"
+            android:padding="10dp"
+            android:layout_below="@+id/item"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wildan Rozaqi (A22.2018.02690)"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/circle2"
+            android:layout_width="134dp"
+            android:layout_height="134dp"
+            android:elevation="-1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="-100dp"
+            android:layout_marginBottom="50dp"
+            android:src="@drawable/circletransparant" />
+
+        <ImageView
+            android:id="@+id/circle3"
+            android:layout_width="182dp"
+            android:layout_height="182dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="-80dp"
+            android:layout_marginBottom="-30dp"
+            android:src="@drawable/circle"
+            android:elevation="-1dp"/>
+
+        <ImageView
+            android:id="@+id/circle4"
+            android:layout_width="134dp"
+            android:layout_height="134dp"
+            android:layout_alignParentBottom="true"
+            android:elevation="-2dp"
+            android:layout_marginRight="-50dp"
+            android:layout_marginBottom="-50dp"
+            android:layout_toLeftOf="@+id/circle3"
+            android:src="@drawable/circletransparant" />
+    </RelativeLayout>
+
+</RelativeLayout>

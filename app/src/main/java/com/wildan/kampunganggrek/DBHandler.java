@@ -27,7 +27,7 @@ public class DBHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_NAME + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_NAMA + " TEXT,"
-                + COLUMN_HARGA + " DOUBLE" + ")";
+                + COLUMN_HARGA + " INTEGER" + ")";
         db.execSQL(CREATE_USER_TABLE);
 
         db.execSQL("insert into " + TABLE_NAME + " values(1,'Anggrek Bulan',120000), (2,'Anggrek Vanda',350000),(3,'Anggrek Putih',200000),(4,'Anggrek Ungu',210000), (5,'Anggrek Dendrobium Secund',350000),(6,'Anggrek Candy Strip',150000)");

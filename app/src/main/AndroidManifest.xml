@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wildan.kampunganggrek">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logoicon"
@@ -9,14 +11,38 @@
         android:roundIcon="@drawable/logoicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".notaActivity"
+        <activity android:name=".admin.EditProduk"
+            android:parentActivityName=".admin.ProdukActivity"
+            android:theme="@style/RegisTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wildan.kampunganggrek.admin.ProdukActivity" />
+        </activity>
+        <activity android:name=".admin.ProdukActivity"
+            android:parentActivityName=".admin.HomeAdmin"
+            android:theme="@style/RegisTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wildan.kampunganggrek.admin.HomeAdmin" />
+        </activity>
+        <activity android:name=".admin.TambahProdukActivity"
+            android:parentActivityName=".admin.HomeAdmin"
+            android:theme="@style/RegisTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wildan.kampunganggrek.admin.HomeAdmin" />
+        </activity>
+        <activity android:name=".admin.HomeAdmin" android:theme="@style/NoBar"/>
+        <activity
+            android:name=".notaActivity"
             android:parentActivityName=".MainActivity"
             android:theme="@style/RegisTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.wildan.kampunganggrek.MainActivity" />
         </activity>
-        <activity android:name=".BayarActivity"
+        <activity
+            android:name=".BayarActivity"
             android:parentActivityName=".belanja"
             android:theme="@style/RegisTheme">
             <meta-data

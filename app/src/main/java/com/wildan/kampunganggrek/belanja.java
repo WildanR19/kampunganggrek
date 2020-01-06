@@ -23,9 +23,9 @@ public class belanja extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private List<Anggrek> list = new ArrayList<>();
+    private ArrayList<Integer> gambarbrg;
     private LinearLayoutManager layoutManager;
     private DBHandler dbHandler;
-    //int[] sampleImages = {R.drawable.anggrek1, R.drawable.anggrek2, R.drawable.anggrek3, R.drawable.anggrek4, R.drawable.anggrek5, R.drawable.anggrek6};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +69,6 @@ public class belanja extends AppCompatActivity {
             final Anggrek model = list.get(position);
             holder.nama.setText(model.getNama());
             holder.harga.setText("Rp. "+model.getHarga());
-            //holder.gbproduk.setImageResource(model.getGambar());
             holder.beli.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -89,6 +88,7 @@ public class belanja extends AppCompatActivity {
             TextView nama, harga, date;
             Button beli;
             ImageView gbproduk;
+
             public ListHolder(View itemView) {
                 super(itemView);
                 nama = (TextView)itemView.findViewById(R.id.nama);

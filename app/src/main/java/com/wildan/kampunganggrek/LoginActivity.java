@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
+import com.wildan.kampunganggrek.admin.HomeAdmin;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -47,7 +48,12 @@ public class LoginActivity extends AppCompatActivity {
                 String Password = editTextPassword.getText().toString();
 
                 //Check user input is correct or not
-                if (validate()) {
+                if ((Email.contains("admin"))&&((Password.contains("admin")))) {
+                    Toast.makeText(LoginActivity.this, "Login Sukses", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoginActivity.this, HomeAdmin.class);
+                    startActivity(intent);
+                    finish();
+                } else if (validate()) {
                     User currentUser = sqliteHelper.Authenticate(new User(0, null, Email, Password));
                     //Check Authentication is successful or not
                     if (currentUser != null) {
