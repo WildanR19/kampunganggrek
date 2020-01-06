@@ -13,5 +13,21 @@ public class User {
         this.password = password;
     }
 
+    public String getuserName() {
+        return userName;
+    }
+
+    public void setuserName(String username) {
+        this.userName = username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 }
 

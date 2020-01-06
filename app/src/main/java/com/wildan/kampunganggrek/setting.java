@@ -7,11 +7,17 @@ import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class setting extends AppCompatActivity {
 
     ImageView usergb, emailgb, call, sms, loc;
+    TextView username,mail;
+    SqliteHelper dbhelp;
+    User user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +28,16 @@ public class setting extends AppCompatActivity {
         call = (ImageView) findViewById(R.id.callgb);
         sms = (ImageView) findViewById(R.id.smsgb);
         loc = (ImageView) findViewById(R.id.loc);
+        username = (TextView) findViewById(R.id.edit_username);
+        mail = (TextView) findViewById(R.id.edit_email);
+
+        dbhelp = new SqliteHelper(this);
+        Bundle bundle = getIntent().getExtras();
+        if(bundle!=null){
+            user = dbhelp.getData(bundle.getInt("ID"));
+            username.setText(user.getuserName());
+            mail.setText(user.getEmail());
+        }
 
         call.setOnClickListener(new View.OnClickListener() {
             @Override

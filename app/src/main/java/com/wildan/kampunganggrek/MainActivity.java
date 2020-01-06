@@ -33,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
         set = (RelativeLayout) findViewById(R.id.setting);
         out = (RelativeLayout) findViewById(R.id.logout);
 
-        /*belanja.setOnClickListener(new View.OnClickListener() {
+        belanja.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, belanjja.class);
+                Intent i = new Intent(MainActivity.this, belanja.class);
                 startActivity(i);
             }
         });
@@ -44,10 +44,10 @@ public class MainActivity extends AppCompatActivity {
         nota.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, notaa.class);
+                Intent i = new Intent(MainActivity.this, notaActivity.class);
                 startActivity(i);
             }
-        });*/
+        });
 
         set.setOnClickListener(new View.OnClickListener() {
             @Override

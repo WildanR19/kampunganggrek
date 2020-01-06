@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".BayarActivity"
+    android:background="#f0f0f0"
+    android:padding="15dp">
+
+    <RelativeLayout
+        android:id="@+id/detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_edit"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp"
+        >
+
+        <View
+            android:id="@+id/hr1"
+            android:layout_below="@+id/desk"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#f0f0f0"/>
+
+        <TextView
+            android:id="@+id/desk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deskripsi Anggrek"
+            app:fontFamily="sans-serif-smallcaps" />
+
+        <TextView
+            android:id="@+id/nama_bunga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/hr1"
+            android:text="Nama Bunga"
+            app:fontFamily="sans-serif-smallcaps" />
+        <TextView
+            android:id="@+id/harga_bunga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/nama_bunga"
+            android:text="Harga"
+            app:fontFamily="sans-serif-smallcaps" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/gambar"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/detail"
+        android:background="@drawable/bg_edit"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp"
+        >
+
+        <View
+            android:id="@+id/hr2"
+            android:layout_below="@+id/gbdes"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#f0f0f0"/>
+
+        <TextView
+            android:id="@+id/gbdes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily=""
+            android:text="Gambar"
+            app:fontFamily="sans-serif-smallcaps" />
+
+        <ImageView
+            android:id="@+id/gbrmap"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/hr2"
+            app:srcCompat="@drawable/anggrek1" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gambar"
+        android:background="@drawable/bg_edit"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp"
+        >
+
+        <View
+            android:id="@+id/hr3"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#f0f0f0"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Bayar"
+            app:fontFamily="sans-serif-smallcaps" />
+        <TextView
+            android:id="@+id/view_harga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hr3"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/rp"
+            android:text="100000"
+            app:fontFamily="sans-serif-smallcaps"
+            />
+        <TextView
+            android:id="@+id/rp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hr3"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Rp. "
+            app:fontFamily="sans-serif-smallcaps"
+            />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnbayar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/tombol_book"
+        android:text="Bayar"
+        android:textColor="@color/colorWhite" />
+
+</RelativeLayout>

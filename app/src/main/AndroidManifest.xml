@@ -9,7 +9,30 @@
         android:roundIcon="@drawable/logoicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".setting"
+        <activity android:name=".notaActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/RegisTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wildan.kampunganggrek.MainActivity" />
+        </activity>
+        <activity android:name=".BayarActivity"
+            android:parentActivityName=".belanja"
+            android:theme="@style/RegisTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wildan.kampunganggrek.belanja" />
+        </activity>
+        <activity
+            android:name=".belanja"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/RegisTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wildan.kampunganggrek.MainActivity" />
+        </activity>
+        <activity
+            android:name=".setting"
             android:parentActivityName=".MainActivity"
             android:theme="@style/RegisTheme">
             <meta-data
@@ -41,7 +64,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/NoBar"></activity>
+            android:theme="@style/NoBar" />
 
         <meta-data
             android:name="preloaded_fonts"
