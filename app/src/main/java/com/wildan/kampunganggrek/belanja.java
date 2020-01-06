@@ -1,13 +1,6 @@
 package com.wildan.kampunganggrek;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,10 +10,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.text.NumberFormat;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class belanja extends AppCompatActivity {
 
@@ -29,7 +25,7 @@ public class belanja extends AppCompatActivity {
     private List<Anggrek> list = new ArrayList<>();
     private LinearLayoutManager layoutManager;
     private DBHandler dbHandler;
-    private TextView txt_resultadapter;
+    //int[] sampleImages = {R.drawable.anggrek1, R.drawable.anggrek2, R.drawable.anggrek3, R.drawable.anggrek4, R.drawable.anggrek5, R.drawable.anggrek6};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +68,8 @@ public class belanja extends AppCompatActivity {
         public void onBindViewHolder(ListHolder holder, int position) {
             final Anggrek model = list.get(position);
             holder.nama.setText(model.getNama());
-            holder.harga.setText(model.getHarga());
+            holder.harga.setText("Rp. "+model.getHarga());
+            //holder.gbproduk.setImageResource(model.getGambar());
             holder.beli.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -89,13 +86,16 @@ public class belanja extends AppCompatActivity {
         }
 
         public class ListHolder extends RecyclerView.ViewHolder{
-            TextView nama, harga;
+            TextView nama, harga, date;
             Button beli;
+            ImageView gbproduk;
             public ListHolder(View itemView) {
                 super(itemView);
                 nama = (TextView)itemView.findViewById(R.id.nama);
                 harga = (TextView)itemView.findViewById(R.id.harga);
                 beli = (Button)itemView.findViewById(R.id.btn_beli);
+                gbproduk = (ImageView)itemView.findViewById(R.id.gbproduk);
+                date = (TextView)itemView.findViewById(R.id.date_nota);
             }
         }
     }

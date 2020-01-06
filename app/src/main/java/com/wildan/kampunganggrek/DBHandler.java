@@ -16,6 +16,7 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String COLUMN_ID = "id";
     private static final String COLUMN_NAMA = "nama";
     private static final String COLUMN_HARGA = "harga";
+    private static final String COLUMN_GB = "gambar";
 
     public DBHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -26,10 +27,10 @@ public class DBHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_NAME + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_NAMA + " TEXT,"
-                + COLUMN_HARGA + " TEXT" + ")";
+                + COLUMN_HARGA + " DOUBLE" + ")";
         db.execSQL(CREATE_USER_TABLE);
 
-        db.execSQL("insert into " + TABLE_NAME + " values(1,'Anggrek Bulan','120000'), (2,'Anggrek Vanda','350000'),(3,'Anggrek Putih','200000'),(4,'Anggrek Ungu','210000'), (5,'Anggrek Dendrobium Secund','350000'),(6,'Anggrek Candy Strip','150000')");
+        db.execSQL("insert into " + TABLE_NAME + " values(1,'Anggrek Bulan',120000), (2,'Anggrek Vanda',350000),(3,'Anggrek Putih',200000),(4,'Anggrek Ungu',210000), (5,'Anggrek Dendrobium Secund',350000),(6,'Anggrek Candy Strip',150000)");
     }
 
     // FUNGSI UNTUK MENGECEK DATABASE ADA ATAU TIDAK.
@@ -41,7 +42,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
     // FUNGSI UNTUK TAMBAH DATA Anggrek
     public void tambahAnggrek(String nama, String harga){
-        String insertData = "INSERT INTO "+ TABLE_NAME + " ("+ COLUMN_NAMA +","+COLUMN_HARGA+") VALUES ('"+nama +"', '"+harga+"')";
+        String insertData = "INSERT INTO "+ TABLE_NAME + " ("+ COLUMN_NAMA +","+COLUMN_HARGA+") VALUES ('"+nama +"', "+harga+")";
         this.getWritableDatabase().execSQL(insertData);
     }
 

@@ -17,6 +17,7 @@ public class NOTAHelper extends SQLiteOpenHelper {
     private static String colID = "id";
     private static String colNama = "nama";
     private static String colHarga = "harga";
+    private static String colDate = "date";
 
     public NOTAHelper(Context context) {
         super(context, DBNAME, null, VERSION);
@@ -26,7 +27,7 @@ public class NOTAHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String createTable = "CREATE TABLE " + TABLENAME + "("
                 + colID + " INTEGER PRIMARY KEY AUTOINCREMENT," + colNama + " TEXT,"
-                + colHarga + " TEXT" + ")";
+                + colHarga + " TEXT" + ","+colDate+" DATE)";
         db.execSQL(createTable);
     }
 
@@ -41,23 +42,13 @@ public class NOTAHelper extends SQLiteOpenHelper {
         this.getWritableDatabase().execSQL(insertData);
     }
 
-    public void updateData(int id, String nama, String alamat){
-        String updateData = "UPDATE "+TABLENAME+ " SET "+ colNama + "= '"+nama +"', "+colHarga + "= '"+alamat + "' WHERE "+colID +" ="+id;
-        this.getWritableDatabase().execSQL(updateData);
-    }
-
-    public void deleteData(int id){
-        String deleteData = "DELETE FROM "+TABLENAME +" WHERE id="+id;
-        this.getWritableDatabase().execSQL(deleteData);
-    }
-
     public nota getData(int id){
         nota model = null;
         String selectData = "SELECT * FROM "+TABLENAME + " WHERE id="+String.valueOf(id);
         Cursor data = this.getWritableDatabase().rawQuery(selectData, null);
         if(data.moveToFirst()){
             model = new nota(Integer.parseInt(data.getString(data.getColumnIndex(colID))),
-                    data.getString(data.getColumnIndex(colNama)), data.getString(data.getColumnIndex(colHarga)));
+                    data.getString(data.getColumnIndex(colNama)), data.getString(data.getColumnIndex(colHarga)), data.getString(data.getColumnIndex(colDate)));
         }
         return model;
     }
@@ -69,7 +60,7 @@ public class NOTAHelper extends SQLiteOpenHelper {
         if(data.moveToFirst()){
             do{
                 model.add(new nota(Integer.parseInt(data.getString(data.getColumnIndex(colID))),
-                        data.getString(data.getColumnIndex(colNama)), data.getString(data.getColumnIndex(colHarga))));
+                        data.getString(data.getColumnIndex(colNama)), data.getString(data.getColumnIndex(colHarga)),data.getString(data.getColumnIndex(colDate))));
             }while (data.moveToNext());
         }
         return model;

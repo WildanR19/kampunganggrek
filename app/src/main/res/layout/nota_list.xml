@@ -68,7 +68,6 @@
                 android:id="@+id/namaA"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/nota_title"
                 android:fontFamily="@font/amaranth"
@@ -79,7 +78,7 @@
                 android:id="@+id/harga_nota"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Harga Barang : Rp. "
+                android:text="Harga Barang : "
                 android:layout_toRightOf="@+id/gbnota"
                 android:layout_below="@+id/nota_title"
                 android:layout_marginLeft="10dp"
@@ -94,6 +93,27 @@
                 android:layout_toRightOf="@+id/harga_nota"
                 android:layout_marginTop="10dp"
                 android:text="Harga"
+                card_view:fontFamily="@font/amaranth" />
+
+            <TextView
+                android:id="@+id/date_nota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tanggal Pembelian : "
+                android:layout_toRightOf="@+id/gbnota"
+                android:layout_below="@+id/harga_nota"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/amaranth"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/date_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/harga_nota"
+                android:layout_toRightOf="@+id/date_nota"
+                android:layout_marginTop="10dp"
+                android:text="date"
                 card_view:fontFamily="@font/amaranth" />
 
         </RelativeLayout>

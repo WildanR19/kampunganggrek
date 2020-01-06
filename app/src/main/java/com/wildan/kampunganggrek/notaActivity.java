@@ -63,6 +63,7 @@ public class notaActivity extends AppCompatActivity {
             final nota model = list.get(position);
             holder.namaA.setText(model.getNama());
             holder.hargaA.setText(model.getHarga());
+            holder.date.setText(model.getDate());
         }
 
         @Override
@@ -71,11 +72,12 @@ public class notaActivity extends AppCompatActivity {
         }
 
         public class ListHolder extends RecyclerView.ViewHolder{
-            TextView namaA, hargaA;
+            TextView namaA, hargaA, date;
             public ListHolder(View itemView) {
                 super(itemView);
                 namaA = (TextView)itemView.findViewById(R.id.namaA);
                 hargaA = (TextView)itemView.findViewById(R.id.hargaA);
+                date = (TextView)itemView.findViewById(R.id.date_view);
             }
         }
     }

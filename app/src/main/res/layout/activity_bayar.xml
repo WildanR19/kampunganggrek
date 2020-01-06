@@ -32,19 +32,38 @@
             app:fontFamily="sans-serif-smallcaps" />
 
         <TextView
-            android:id="@+id/nama_bunga"
+            android:id="@+id/nama_bunga_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:layout_below="@+id/hr1"
+            android:text="Nama Bunga : "
+            app:fontFamily="sans-serif-smallcaps" />
+        <TextView
+            android:id="@+id/nama_bunga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/hr1"
+            android:layout_toRightOf="@+id/nama_bunga_title"
             android:text="Nama Bunga"
+            app:fontFamily="sans-serif-smallcaps" />
+
+        <TextView
+            android:id="@+id/harga_bunga_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/nama_bunga"
+            android:text="Harga : "
             app:fontFamily="sans-serif-smallcaps" />
         <TextView
             android:id="@+id/harga_bunga"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/harga_bunga_title"
             android:layout_marginTop="5dp"
             android:layout_below="@id/nama_bunga"
             android:text="Harga"
@@ -86,10 +105,65 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/edit"
+        android:id="@+id/jumlah"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/gambar"
+        android:background="@drawable/bg_edit"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp">
+
+        <View
+            android:id="@+id/hr4"
+            android:layout_below="@+id/jumlaht"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#f0f0f0"/>
+
+        <TextView
+            android:id="@+id/jumlaht"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily=""
+            android:text="Jumlah Beli"
+            app:fontFamily="sans-serif-smallcaps" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hr4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp">
+            <Button
+                android:id="@+id/minus"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_minus"
+                android:layout_margin="0dp"
+                android:padding="0dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/jmlBeli"
+                android:layout_width="50dp"
+                android:layout_height="fill_parent"
+                android:text="1"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+            <Button
+                android:id="@+id/plus"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_plus"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/total_bayar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/jumlah"
         android:background="@drawable/bg_edit"
         android:layout_marginBottom="10dp"
         android:padding="10dp"
@@ -114,18 +188,7 @@
             android:layout_below="@+id/hr3"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/rp"
             android:text="100000"
-            app:fontFamily="sans-serif-smallcaps"
-            />
-        <TextView
-            android:id="@+id/rp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/hr3"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:text="Rp. "
             app:fontFamily="sans-serif-smallcaps"
             />
     </RelativeLayout>
